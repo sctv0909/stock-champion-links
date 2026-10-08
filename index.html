@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>주식챔피언 공식채널</title>
+  <meta name="description" content="주식챔피언의 공식 채널을 한곳에서 만나보세요.">
+  <meta name="theme-color" content="#F7F7F8">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="preload" as="image" href="assets/mentors.webp">
+  <style>
+    :root {
+      --bg: #F7F7F8;
+      --surface: #FFFFFF;
+      --ink: #111214;
+      --ink-sub: #5B5E66;
+      --ink-faint: #9A9DA4;
+      --line: #E4E5E8;
+      --red: #D71F27;
+      --red-soft: #FDECEC;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      line-height: 1.5;
+      word-break: keep-all;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: calc(40px + env(safe-area-inset-top)) 20px calc(32px + env(safe-area-inset-bottom));
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 로고 + 안내 */
+    .brand { text-align: center; }
+    .brand__logo { display: block; width: 200px; height: auto; margin: 0 auto; }
+    .brand__title {
+      margin-top: 24px;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .brand__title::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 3px;
+      margin: 0 auto 14px;
+      border-radius: 2px;
+      background: var(--red);
+    }
+    .brand__desc {
+      margin-top: 6px;
+      font-size: 16px;
+      color: var(--ink-sub);
+    }
+
+    /* 멘토 단체 이미지 */
+    .mentors {
+      margin: 20px -8px 0;
+      aspect-ratio: 1440 / 1010;
+    }
+    .mentors img { display: block; width: 100%; height: auto; }
+
+    /* 채널 버튼 */
+    .links {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: -8px;
+      position: relative;
+    }
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 64px;
+      padding: 0 18px 0 12px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 1px 2px rgba(17, 18, 20, .04), 0 4px 14px rgba(17, 18, 20, .05);
+      color: var(--ink);
+      text-decoration: none;
+      transition: border-color .18s, box-shadow .18s, transform .18s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .link__icon {
+      flex: none;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--red-soft);
+      color: var(--red);
+      transition: background-color .18s, color .18s;
+    }
+    .link__icon svg { width: 22px; height: 22px; }
+    .link__label {
+      flex: 1;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .link__arrow {
+      flex: none;
+      width: 20px;
+      height: 20px;
+      color: var(--ink-faint);
+      transition: color .18s, transform .18s;
+    }
+    .link:hover,
+    .link:focus-visible {
+      border-color: var(--red);
+      box-shadow: 0 0 0 1px var(--red), 0 8px 22px rgba(215, 31, 39, .14);
+      transform: translateY(-1px);
+    }
+    .link:focus-visible { outline: 3px solid rgba(215, 31, 39, .35); outline-offset: 3px; }
+    .link:hover .link__icon,
+    .link:focus-visible .link__icon { background: var(--red); color: #fff; }
+    .link:hover .link__arrow,
+    .link:focus-visible .link__arrow { color: var(--red); transform: translateX(3px); }
+    .link:active { transform: translateY(0); box-shadow: 0 1px 2px rgba(17, 18, 20, .06); }
+
+    /* 하단 */
+    .footer {
+      margin-top: auto;
+      padding-top: 40px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--ink-faint);
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 360px) {
+      .page { padding-left: 16px; padding-right: 16px; }
+      .brand__logo { width: 184px; }
+      .brand__title { font-size: 22px; }
+      .brand__desc { font-size: 15px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .link, .link__arrow, .link__icon { transition: none; }
+      .link:hover, .link:focus-visible { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="brand">
+      <h1><img class="brand__logo" src="assets/logo.png" alt="주식챔피언 STOCK CHAMPION" width="217" height="70"></h1>
+      <p class="brand__title">공식채널 링크모음</p>
+      <p class="brand__desc">주식챔피언의 공식 채널을 한곳에서 만나보세요.</p>
+    </header>
+
+    <figure class="mentors">
+      <img src="assets/mentors.webp" alt="주식챔피언 멘토 3인" width="1440" height="1010">
+    </figure>
+
+    <nav aria-label="공식 채널">
+      <ul class="links">
+        <li>
+          <a class="link" href="https://www.instagram.com/kimhyungu_official/">
+            <span class="link__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <span class="link__label">인스타그램 바로가기</span>
+            <svg class="link__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="link" href="https://blog.naver.com/sc_tv">
+            <span class="link__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+            </span>
+            <span class="link__label">블로그 바로가기</span>
+            <svg class="link__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="link" href="https://t.me/sctv_09">
+            <span class="link__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5L2.8 11.6c-.8.3-.8 1.4 0 1.7l4.7 1.6 1.8 5.6c.2.7 1.1.9 1.6.4l2.6-2.5 4.8 3.5c.6.4 1.4.1 1.6-.6l3-15c.2-.9-.6-1.6-1.4-1.3z"/><path d="M7.5 14.9L18 7.5l-8.2 8.4"/></svg>
+            </span>
+            <span class="link__label">텔레그램 바로가기</span>
+            <svg class="link__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <footer class="footer">주식챔피언 공식채널</footer>
+  </main>
+</body>
+</html>
